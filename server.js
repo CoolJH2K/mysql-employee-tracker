@@ -2,6 +2,8 @@
 const express = require("express");
 const inquirer = require("inquirer");
 const mysql = require("mysql2");
+const connectDb = require("db/connection");
+const DB = require("db/index");
 
 // Create PORT
 const PORT = process.env.PORT || 3001;
@@ -50,8 +52,8 @@ inquirer
                         choices: ["Sales Lead", "Salesperson", "Lead Engineer", "Software Engineer", "Account Manager", "Accountant", "Legal Team Lead", "Lawyer"]
                     },
                     {
-                        name: "",
-                        message: "",
+                        name: "new_employee_manager",
+                        message: "Who is the employee's manager?",
                         type: "list",
                         choices: ["John Doe", "Mike Chan", "Ashley Rodriguez", "Kevin Tupik", "Kunal Singh", "Malia Brown", "Sarah Lourd", "Tom Allen"]
                     }
